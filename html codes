@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML Tag Playground — All-in-One Example</title>
+  <style>
+    /* Simple CSS (inside the HTML file) */
+    :root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;line-height:1.4}
+    body{margin:0;padding:1.5rem;background:#f6f8fa;color:#111}
+    header, footer, nav, main, article, section, aside{display:block}
+    .container{max-width:1000px;margin:0 auto;background:#fff;padding:1.25rem;border-radius:8px;box-shadow:0 6px 18px rgba(20,20,30,0.06)}
+    header{border-bottom:1px solid #e6e9ee;padding-bottom:0.75rem}
+    nav ul{display:flex;gap:0.5rem;list-style:none;padding:0;margin:0}
+    nav a{padding:0.35rem 0.6rem;border-radius:6px;text-decoration:none}
+    .hero{display:flex;gap:1rem;align-items:center}
+    .hero img{border-radius:8px}
+    aside{background:#fafbfc;padding:0.75rem;border-radius:6px}
+    table{width:100%;border-collapse:collapse;margin:0.5rem 0}
+    table, th, td{border:1px solid #e6e9ee}
+    th, td{padding:0.5rem;text-align:left}
+    pre{background:#0d0f13;color:#e6eef8;padding:0.75rem;border-radius:6px;overflow:auto}
+    code{background:#f1f5f9;padding:0.15rem 0.3rem;border-radius:4px}
+    .grid{display:grid;grid-template-columns:1fr 300px;gap:1rem}
+    details summary{cursor:pointer}
+    footer{margin-top:1rem;border-top:1px solid #e6e9ee;padding-top:0.75rem;font-size:0.9rem}
+    .small{font-size:0.9rem;color:#555}
+    .controls{display:flex;gap:0.5rem;flex-wrap:wrap}
+    fieldset{margin:0.5rem 0;padding:0.75rem;border-radius:6px;border:1px solid #e6e9ee}
+    figure{margin:0}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="hero">
+        <div>
+          <h1>HTML Tag Playground <small class="small">(A compact demo of many common HTML tags)</small></h1>
+          <p class="small">This file demonstrates semantic elements, form controls, media tags, and inline elements — all styled with internal CSS only.</p>
+        </div>
+        <img src="https://via.placeholder.com/120" alt="placeholder" width="120" height="120">
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#content">Content</a></li>
+          <li><a href="#forms">Forms</a></li>
+          <li><a href="#media">Media</a></li>
+          <li><a href="#extras">Extras</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="content" class="grid">
+      <section>
+        <article>
+          <h2>Text & Inline Elements</h2>
+          <p>This paragraph shows <strong>strong</strong>, <em>emphasis</em>, <mark>highlighted text</mark>, <small>small print</small>, and an inline <code>code</code> sample. Here's an abbreviation: <abbr title="HyperText Markup Language">HTML</abbr>.</p>
+
+          <p>Quotations: <q cite="https://example.com">This is a short inline quote</q>. Block quote follows:</p>
+          <blockquote cite="https://example.com">
+            <p>"Education is the most powerful weapon which you can use to change the world." — <cite>Nelson Mandela</cite></p>
+          </blockquote>
+
+          <h3>Lists</h3>
+          <ul>
+            <li>Unordered list item</li>
+            <li>With nested ordered list
+              <ol>
+                <li>First</li>
+                <li>Second <sub>sub</sub> and <sup>sup</sup></li>
+              </ol>
+            </li>
+            <li>Third</li>
+          </ul>
+
+          <h3>Definition list</h3>
+          <dl>
+            <dt>HTML</dt>
+            <dd>The standard markup language for documents designed to be displayed in a web browser.</dd>
+            <dt>CSS</dt>
+            <dd>Styles used to control the presentation of HTML.</dd>
+          </dl>
+
+          <h3>Table</h3>
+          <table>
+            <caption>Sample info</caption>
+            <thead>
+              <tr><th>Feature</th><th>Yes/No</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Semantic tags</td><td>Yes</td></tr>
+              <tr><td>Forms</td><td>Yes</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td>Notes</td><td>Demo only</td></tr>
+            </tfoot>
+          </table>
+
+          <h3>Inline code block</h3>
+          <pre><code>&lt;div&gt;Hello World&lt;/div&gt;</code></pre>
+
+          <p>Keyboard input example: Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy. Sample output element: <samp>Result: OK</samp></p>
+
+        </article>
+
+        <section id="forms">
+          <h2>Forms & Interactive Controls</h2>
+          <form action="#" method="post">
+            <fieldset>
+              <legend>Contact</legend>
+              <label for="name">Name:</label><br>
+              <input type="text" id="name" name="name" placeholder="Your name" required><br>
+
+              <label for="email">Email:</label><br>
+              <input type="email" id="email" name="email" placeholder="you@example.com"><br>
+
+              <label>Choose a plan:</label>
+              <div>
+                <input type="radio" id="free" name="plan" value="free" checked><label for="free">Free</label>
+                <input type="radio" id="pro" name="plan" value="pro"><label for="pro">Pro</label>
+              </div>
+
+              <label for="interests">Interests (multiple):</label><br>
+              <select id="interests" name="interests" multiple size="3">
+                <option>Design</option>
+                <option selected>Development</option>
+                <option>Marketing</option>
+              </select>
+
+              <fieldset>
+                <legend>Preferences</legend>
+                <input type="checkbox" id="news" name="news" checked><label for="news">Newsletter</label>
+                <input type="checkbox" id="updates" name="updates"><label for="updates">Product updates</label>
+              </fieldset>
+
+              <label for="bio">Short bio</label><br>
+              <textarea id="bio" name="bio" rows="4" cols="40" placeholder="Tell us about yourself"></textarea>
+
+              <label for="birthday">Birthday:</label>
+              <input type="date" id="birthday" name="birthday">
+
+              <label for="quantity">Quantity (1-10):</label>
+              <input type="range" id="quantity" name="quantity" min="1" max="10" value="3">
+
+              <div class="controls">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+                <input type="hidden" name="token" value="abc123">
+              </div>
+            </fieldset>
+          </form>
+
+          <details>
+            <summary>More form fields</summary>
+            <p>File upload (note: server required to handle):</p>
+            <input type="file" name="file">
+            <p>Number input:</p>
+            <input type="number" name="age" min="0" max="120">
+          </details>
+        </section>
+
+        <section id="media">
+          <h2>Media</h2>
+          <figure>
+            <img src="https://via.placeholder.com/560x200" alt="Wide placeholder" width="560" height="200">
+            <figcaption>A sample figure with a caption.</figcaption>
+          </figure>
+
+          <p>Audio element (controls shown):</p>
+          <audio controls>
+            <source src="" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+
+          <p>Video element (controls shown):</p>
+          <video controls width="320">
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <p>Canvas element (left empty — no JS):</p>
+          <canvas width="200" height="100">Fallback: canvas not supported.</canvas>
+
+          <p>Progress &amp; Meter:</p>
+          <progress value="70" max="100">70%</progress>
+          <meter value="2" min="0" max="10">2 out of 10</meter>
+
+        </section>
+
+        <section id="extras">
+          <h2>Misc & Semantic Elements</h2>
+          <address>
+            Contact: <a href="mailto:hello@example.com">hello@example.com</a><br>
+            Example Street 123, Demo City
+          </address>
+
+          <p>Time element: <time datetime="2025-09-13">September 13, 2025</time></p>
+
+          <p>Inserted and deleted text: <ins datetime="2025-09-13">Added text</ins> and <del datetime="2024-01-01">Removed text</del>.</p>
+
+          <p>Template example (not instantiated):</p>
+          <template id="card-template">
+            <article class="card">
+              <h4>Template card</h4>
+              <p>Use JS to clone this template.</p>
+            </article>
+          </template>
+
+          <p>Meter, progress, and SVG placeholder:</p>
+          <svg width="80" height="40" role="img" aria-label="tiny rectangle"><rect width="80" height="40"/></svg>
+
+        </section>
+      </section>
+
+      <aside>
+        <h3>Quick references</h3>
+        <ul>
+          <li><a href="#content">Back to top</a></li>
+          <li><a href="#forms">Forms</a></li>
+          <li><a href="#media">Media</a></li>
+        </ul>
+
+        <h4>Form attributes</h4>
+        <p class="small">Required, placeholder, min/max, pattern, and type attributes appear in this demo.</p>
+
+        <h4>Accessibility</h4>
+        <p class="small">Use labels, fieldsets, legends, and semantic elements like &lt;nav&gt; and &lt;main&gt; to help assistive tech.</p>
+      </aside>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 — Example Demo. This file is a compact playground of many common HTML tags and simple CSS only (no JavaScript).</p>
+    </footer>
+  </div>
+</body>
+</html>
